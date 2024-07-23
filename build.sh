@@ -162,7 +162,7 @@ announce rvm remove 1.8.7
 ensure_gpg_key
 rm -f ~/.rvmrc
 announce rvm reload
-announce rvm use ruby-2.4.2
+announce rvm use ruby-3.2.0
 announce curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 announce curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 announce curl -sSL https://get.rvm.io | bash -s stable
