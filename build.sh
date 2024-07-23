@@ -161,9 +161,9 @@ fold_start rvm.1 "update rvm"
 announce rvm remove 1.8.7
 ensure_gpg_key
 rm -f ~/.rvmrc
-announce curl -sSL https://get.rvm.io | bash -s stable
 announce rvm reload
-announce rvm use 2.3
+announce rvm use ruby-2.4.2
+announce curl -sSL https://get.rvm.io | bash -s stable
 announce rvm cleanup all
 fold_end rvm.1
 
