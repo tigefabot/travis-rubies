@@ -270,7 +270,11 @@ ruby-3.*)
   rust_setup
   announce brew install openssl@1.1
   OPENSSL_FLAGS="-C --with-openssl-dir=/usr/local/opt/openssl@1.1"
-  announce rvm install --with-openssl-dir="/usr/local/opt/openssl@1.1" $RUBY $EXTRA_FLAGS --enable-yjit --verify-downloads 1 $MOVABLE_FLAG --disable-install-doc -C --without-tcl,--without-tk,--without-gmp
+  announce export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+  announce export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+  announce export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+  
+  announce rvm install $RUBY $EXTRA_FLAGS --with-openssl-dir="/usr/local/opt/openssl@1.1"  --enable-yjit --verify-downloads 1 $MOVABLE_FLAG --disable-install-doc -C --without-tcl,--without-tk,--without-gmp
   ;;
 jruby-head)
   update_mvn 3.3.9
