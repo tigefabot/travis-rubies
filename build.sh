@@ -165,6 +165,7 @@ announce rvm reload
 announce curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 announce curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 announce curl -sSL https://get.rvm.io | bash -s stable
+announce rvm reset 
 announce rvm use --install 2.4.2
 announce rvm cleanup all
 fold_end rvm.1
@@ -193,9 +194,7 @@ fold_end rvm.3
 if command -v sw_vers >> /dev/null; then
   announce install_autoconf
   fold_start rvm.4 "OSX specific setup"
-  announce rvm reset 
   announce rvm autolibs homebrew
-  announce rvm get stable --auto-dotfiles
   announce rvm use --install 2.4.2
   announce sudo mkdir -p /etc/openssl
   announce sudo chown -R $USER: /etc/openssl
@@ -269,7 +268,8 @@ ruby-2.*)
 # Ruby YJIT
 ruby-3.*)
   rust_setup
-  announce rvm install $RUBY $EXTRA_FLAGS --verify-downloads 1 $MOVABLE_FLAG --disable-install-doc -C --without-tcl,--without-tk,--without-gmp
+  announce rvm install $RUBY $EXTRA_FLAGS --enable-yjit --verify-downloads 1 $MOVABLE_FLAG --disable-install-doc -C --without-tcl,--without-tk,--without-gmp
+  cat /Users/travis/.rvm/log/1721818576_ruby-3.2.0/configure.log
   ;;
 jruby-head)
   update_mvn 3.3.9
