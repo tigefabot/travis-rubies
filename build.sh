@@ -274,7 +274,7 @@ ruby-3.*)
   announce export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
   announce export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
   
-  announce rvm install $RUBY $EXTRA_FLAGS --with-openssl-dir="/usr/local/opt/openssl@1.1"  --enable-yjit --verify-downloads 1 $MOVABLE_FLAG --disable-install-doc -C --without-tcl,--without-tk,--without-gmp
+  announce rvm install $RUBY $EXTRA_FLAGS --enable-yjit --verify-downloads 1 $MOVABLE_FLAG --disable-install-doc -C --without-tcl,--without-tk,--without-gmp
   ;;
 jruby-head)
   update_mvn 3.3.9
