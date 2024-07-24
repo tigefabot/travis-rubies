@@ -268,8 +268,7 @@ ruby-2.*)
 # Ruby YJIT
 ruby-3.*)
   rust_setup
-  announce rvm install $RUBY $EXTRA_FLAGS --enable-yjit --verify-downloads 1 $MOVABLE_FLAG --disable-install-doc -C --without-tcl,--without-tk,--without-gmp
-  cat /Users/travis/.rvm/log/1721818576_ruby-3.2.0/configure.log
+  announce rvm install $RUBY $EXTRA_FLAGS --enable-yjit --verify-downloads 1 $MOVABLE_FLAG 
   ;;
 jruby-head)
   update_mvn 3.3.9
